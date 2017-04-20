@@ -225,7 +225,7 @@ Please visit our [project page]((http://www.bbc.co.uk/rd/projects/high-dynamic-r
 
 # Authors
 
-This software was written by Philip DeNeir and Manish Pindoria (manish.pindoria at bbc.co.uk)
+This software was written by Philip de Nier and Manish Pindoria (manish.pindoria at bbc.co.uk)
 
 # Contact and Legal Information
 
