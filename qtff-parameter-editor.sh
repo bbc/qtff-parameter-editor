@@ -31,6 +31,8 @@
 ## POSSIBILITY OF SUCH DAMAGE.
 ## 
  
+ffprobe_exe=""
+ 
 #define the tabels as globals
 primaries=("Reserved"
            "ITU-R BT.709"
@@ -239,7 +241,7 @@ outputInfoProRes()
 {
   ipFile=$1
   leaf=${ipFile%.mov}
-  ffprobe -loglevel panic -show_packets -select_streams v:0 ${ipFile} | grep pos > ${leaf}_offsets.txt
+  ${ffprobe_exe} -loglevel panic -show_packets -select_streams v:0 ${ipFile} | grep pos > ${leaf}_offsets.txt
   ${dir}/src/rdd36mod -s -o ${leaf}_offsets.txt ${ipFile} > ${leaf}_rdd36mod.txt 2>&1
   
   #cat ${leaf}_rdd36mod.txt
@@ -368,6 +370,31 @@ cloneMovAndModify()
 
 ###########################################################################################
 
+
+checkffprobe()
+{
+  if type ffprobe 2>/dev/null
+  then
+    echo "Found ffprobe in the PATH"
+    ffprobe_exe=$(which ffprobe)
+  else
+    echo "ffprobe not found in the PATH,"
+    echo "Please provide the location of ffprobe, followed by [ENTER] "
+    read ffprobe_exe
+    if type ${ffprobe_exe} >/dev/null 2>&1
+    then
+      echo "Found ffprobe in the location ${ffprobe_exe}"
+    else
+      echo "ffprobe not found, it is required"
+      echo "Exiting"
+      exit
+    fi    
+  fi
+}
+
+
+###########################################################################################
+
 dir=$(dirname $0)
 
 if [ "$#" = "0" ]
@@ -379,6 +406,7 @@ then
   then
     outputHelp
   else
+    checkffprobe
     outputInfoMovWrapper $1
     outputInfoProRes $1
     cleanup $1
@@ -407,6 +435,7 @@ else
     fi    
   done
   
+  checkffprobe
   cloneMovAndModify $1 $2 $newPrim $newTF $newMatrix
   cleanup $1
   cleanup $2
