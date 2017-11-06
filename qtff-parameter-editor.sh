@@ -359,7 +359,7 @@ cloneMovAndModify()
   then
     echo "Modifying the matrix ..." 
     matrixhex=$(printf "%02x" $newMatrix) 
-    printf "\x${newMatrix}" | dd conv=notrunc of=$opFile bs=1 seek=$(($offset + 17)) &> /dev/null 
+    printf "\x${matrixhex}" | dd conv=notrunc of=$opFile bs=1 seek=$(($offset + 17)) &> /dev/null
    ${dir}/src/rdd36mod -o ${leaf}_offsets.txt -m $newMatrix  ${opFile}       
   fi 
   
