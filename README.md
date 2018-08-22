@@ -221,7 +221,7 @@ If a colr Atom is not present in the video file, the process will not attempt to
 
 # Resources
 
-Please visit our [project page]((http://www.bbc.co.uk/rd/projects/high-dynamic-range) for more information about High Dynamic Range (HDR) and Hybrid Log-Gamma (HLG).
+Please visit our [project page](http://www.bbc.co.uk/rd/projects/high-dynamic-range) for more information about High Dynamic Range (HDR) and Hybrid Log-Gamma (HLG).
 
 # Authors
 
