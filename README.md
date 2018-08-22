@@ -6,7 +6,7 @@ Part of the [HDR-TV](http://www.bbc.co.uk/rd/projects/high-dynamic-range) series
 
 # Introduction
 
-Several post-production tools and utilities are now aware of the colour and transfer function parameters specified in [ITU-R BT.2100-0](https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.2100-0-201607-I!!PDF-E.pdf). However, some tools are unable to correctly signal the correct parameters, and may result in a file with the incorrect video parameters. Subsequent tools or displays may then look at these video parameters and render the image incorrectly, for instance, video that this signalled as [ITU-R BT.709](https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-6-201506-I!!PDF-E.pdf) colour primaries and in fact is [ITU-R BT.2020](https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.2020-2-201510-I!!PDF-E.pdf) colour primary and then displayed on a monitor will look desaturated when the display is interpreting the signalling contained within the file. Incorrect signalling may also result in unnecessary and incorrect transcoding between colour spaces and transfer functions.  
+Several post-production tools and utilities are now aware of the colour and transfer function parameters specified in [ITU-R BT.2100-0](https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.2100-0-201607-I!!PDF-E.pdf). However, some tools are unable to correctly signal the correct parameters, and may result in a file with the incorrect video parameters. Subsequent tools or displays may then look at these video parameters and render the image incorrectly, for instance, video that this signalled as [ITU-R BT.709](https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-6-201506-I!!PDF-E.pdf) colour primaries and in fact is [ITU-R BT.2020](https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.2020-2-201510-I!!PDF-E.pdf) colour primary and then displayed on a monitor will look desaturated when the display is interpreting the signalling contained within the file. Incorrect signalling may also result in unnecessary and incorrect transcoding between colour spaces and transfer functions.
 
 This document introduces a series of tools to allow editing of the colour primaries, colour matrix and transfer function characteristics in a [QuickTime File Format](https://developer.apple.com/library/content/documentation/QuickTime/QTFF/QTFFPreface/qtffPreface.html) (MOV) using a [ProRes](https://support.apple.com/en-gb/HT202410) video codec.
 
@@ -77,10 +77,10 @@ The transfer function can be selected from the list:
 |17    | SMPTE ST 428-1                      |
 |18    | ARIB STD-B67 (HLG)                  |
 
-The colour matrix can be selected from the list:    
+The colour matrix can be selected from the list:
 
 | No.  | Colour Matrix                  |
-| -----| ---------------------------    |   
+| -----| ---------------------------    |
 |0     |GBR                             |
 |1     |BT709                           |
 |2     |Unspecified                     |
@@ -101,11 +101,11 @@ This repository contains a number of tools that will aid in analysing a video fi
 
 ### Prerequisites
 
-[ffprobe](https://ffmpeg.org/ffprobe.html) is required to find the extract the location of the frame headers from the ProRes bitstream. Downloads can be found [here](https://ffmpeg.org/download.html) for your OS. Static builds for [Linux](https://ffmpeg.org/download.html#build-linux) are available if building from source is not an option. Static builds for Windows and OSX are available via third party websites. Once obtained, ffprobe must be put into the `PATH`.  
+[ffprobe](https://ffmpeg.org/ffprobe.html) is required to find the extract the location of the frame headers from the ProRes bitstream. Downloads can be found [here](https://ffmpeg.org/download.html) for your OS. Static builds for [Linux](https://ffmpeg.org/download.html#build-linux) are available if building from source is not an option. Static builds for Windows and OSX are available via third party websites. Once obtained, ffprobe must be put into the `PATH`.
 
 [MediaInfo](https://mediaarea.net/en/MediaInfo) is a convenient unified display of the most relevant technical and tag data for video and audio files. The tool is useful checking the outputs to the tools within thsi repository are reporting accurate information.
 
-Standard developer tools (gcc/g++, make, bash) will be required to build and run the code. 
+Standard developer tools (gcc/g++, make, bash) will be required to build and run the code.
 
 ### Building the code
 
@@ -215,7 +215,7 @@ The help from the bash script describes its usage:
               function and bt2020 non constant luminance matrix
 
 
-```    
+```
 
 If a colr Atom is not present in the video file, the process will not attempt to insert one, and will quit the processing.
 
