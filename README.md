@@ -101,9 +101,9 @@ This repository contains a number of tools that will aid in analysing a video fi
 
 ### Prerequisites
 
-[ffprobe](https://ffmpeg.org/ffprobe.html) is required to find the extract the location of the frame headers from the ProRes bitstream. Downloads can be found [here](https://ffmpeg.org/download.html) for your OS. Static builds for [Linux](https://ffmpeg.org/download.html#build-linux) are available if building from source is not an option. Static builds for Windows and OSX are available via third party websites. Once obtained, ffprobe must be put into the `PATH`.
+[ffprobe](https://ffmpeg.org/ffprobe.html) is required to find and extract the location of the frame headers from the ProRes bitstream. Downloads can be found [here](https://ffmpeg.org/download.html) for your OS. Static builds for [Linux](https://ffmpeg.org/download.html#build-linux) are available if building from source is not an option. Static builds for Windows and OSX are available via third party websites. Once obtained, ffprobe must be put into the `PATH`.
 
-[MediaInfo](https://mediaarea.net/en/MediaInfo) is a convenient unified display of the most relevant technical and tag data for video and audio files. The tool is useful checking the outputs to the tools within thsi repository are reporting accurate information.
+[MediaInfo](https://mediaarea.net/en/MediaInfo) is a convenient unified display of the most relevant technical and tag data for video and audio files. It is useful to check the accuracy of the tools provided within this repository.
 
 Standard developer tools (gcc/g++, make, bash) will be required to build and run the code.
 
